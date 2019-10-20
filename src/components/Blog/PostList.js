@@ -6,7 +6,14 @@ class PostList extends Component {
         return (
             <div className="list-group">
                 {
-                    this.props.posts.map(post => (<div key={post.id}><PostListItem post={post} /> <br/></div>))
+                    this.props.posts.map(post => (
+                                <React.Fragment key={post.id}>
+                                    <PostListItem onLike={this.props.onLike} 
+                                                  onDontLike={this.props.onDontLike} 
+                                                  post={post} />
+                                    <br/>
+                                </React.Fragment>)
+                                )
                 }
             </div>
         )
