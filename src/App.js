@@ -15,7 +15,7 @@ class App extends React.Component {
     }
   }
 
-  addPost = (post) => {
+  addPost = post => {
     post.id = this.state.posts.length + 1
     this.setState(
       (prevState) => {

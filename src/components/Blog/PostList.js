@@ -1,23 +1,19 @@
-import React, { Component } from 'react'
+import React from 'react'
 import PostListItem from './PostListItem'
 
-class PostList extends Component {
-    render() {
-        return (
-            <div className="list-group">
-                {
-                    this.props.posts.map(post => (
-                                <React.Fragment key={post.id}>
-                                    <PostListItem onLike={this.props.onLike} 
-                                                  onDontLike={this.props.onDontLike} 
-                                                  post={post} />
+const PostList = props => (
+    <div className="list-group">
+        {
+            props.posts.map(post => (
+                        <React.Fragment key={post.id}>
+                            <PostListItem onLike={props.onLike} 
+                                          onDontLike={props.onDontLike} 
+                                          post={post} />
                                     <br/>
-                                </React.Fragment>)
+                        </React.Fragment>)
                                 )
-                }
-            </div>
-        )
-    }
-}
+        }
+        </div>
+)
 
 export default PostList
